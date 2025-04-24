@@ -12,7 +12,7 @@ else:
     # print(df)
     if df is not None:
         df=moving_average_crossover(df)
-        print(df[['time', 'close', 'short_ma', 'long_ma', 'signal']].tail())
+        print(df[['time', 'close', 'short_ma', 'long_ma', 'signal']])
 
 
     # shut down connection to MetaTrader 5 terminal
