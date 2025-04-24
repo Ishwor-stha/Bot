@@ -24,7 +24,6 @@ def getData():
         mt5.TIMEFRAME_MN1: "MN1",
     }
     pd.set_option('display.max_rows', None)
-    # Initialize the connection to MetaTrader 5
 
 
     # Request historical data
@@ -38,7 +37,7 @@ def getData():
         # Convert the 'time' column from seconds since epoch to datetime objects
         df['time'] = pd.to_datetime(df['time'], unit='s')
 
-        # Get the string representation of the timeframe from our mapping
+        # Get the string representation of the timeframe from  mapping
         timeframe_str = TIMEFRAME_STR.get(timeframe, str(timeframe))
 
         print(f"Retrieved {len(df)} bars of historical data for {symbol} in {timeframe_str} timeframe:")
