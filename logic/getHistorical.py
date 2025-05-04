@@ -11,6 +11,16 @@ def getData():
     num_bars = 100
 
     # Timeframe mapping
+    # M1: 1-minute chart (each candlestick represents 1 minute of price data).
+    # M5: 5-minute chart.
+    # M15: 15-minute chart.
+    # M30: 30-minute chart.
+    # H1: 1-hour chart.
+    # H2: 2-hour chart.
+    # H4: 4-hour chart.
+    # D1: Daily chart (1 day per candlestick).
+    # W1: Weekly chart (1 week per candlestick).
+    # MN1: Monthly chart (1 month per candlestick).
     TIMEFRAME_STR = {
         mt5.TIMEFRAME_M1: "M1",
         mt5.TIMEFRAME_M5: "M5",
