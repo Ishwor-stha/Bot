@@ -40,7 +40,9 @@ def getData():
     # Request historical data
     # rates = mt5.copy_rates_from_pos(symbol, timeframe, 0, num_bars)
     utc_from = datetime.now(timezone.utc) - timedelta(days=365*5)
+    # print(utc_from)
     to   = datetime.now(timezone.utc)
+    # print(to)
     rates = mt5.copy_rates_range("XAUUSD", mt5.TIMEFRAME_H4, utc_from, to)
     # print(rates)
 

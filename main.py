@@ -14,7 +14,7 @@ else:
         df=moving_average_crossover(df)
         df.to_csv('historical_data.tsv', sep='\t', index=False)
 
-        print(df[['time', 'close', 'short_ma', 'long_ma', 'signal']])
+        # print(df[['time', 'close', 'short_ma', 'long_ma', 'signal']])
 
 
     # shut down connection to MetaTrader 5 terminal
