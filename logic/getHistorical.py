@@ -1,7 +1,7 @@
 # getHistorical.py
 import MetaTrader5 as mt5
 import pandas as pd
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta,timezone
 
 
 
@@ -39,8 +39,9 @@ def getData():
 
     # Request historical data
     # rates = mt5.copy_rates_from_pos(symbol, timeframe, 0, num_bars)
-    start = datetime.now() - timedelta(days=365*5)
-    rates = mt5.copy_rates_from("XAUUSD", mt5.TIMEFRAME_H4, start, 10000)
+    utc_from = datetime.now(timezone.utc) - timedelta(days=365*5)
+    to   = datetime.now(timezone.utc)
+    rates = mt5.copy_rates_range("XAUUSD", mt5.TIMEFRAME_H4, utc_from, to)
     # print(rates)
 
     # Process the received data
